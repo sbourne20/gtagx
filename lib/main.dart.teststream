@@ -1,0 +1,128 @@
+import 'dart:async';
+
+import 'package:customtag/garapinTag.dart';
+import 'package:customtag/garapinTagController.dart';
+import 'package:customtag/modal/garapinTagModel.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(GarapinTag());
+}
+
+class GarapinTag extends StatefulWidget {
+  const GarapinTag({Key key, this.controller}) : super(key: key);
+  final GarapinTagController controller;
+
+  @override
+  _GarapinTagState createState() => _GarapinTagState();
+
+  static Widget create(BuildContext context) {
+    return Provider<GarapinTagController>(
+      create: (context) => GarapinTagController(),
+      child: Consumer<GarapinTagController>(
+        builder: (context, controller, _) => GarapinTag(controller: controller),
+      ),
+      dispose: (context, bloc) => bloc.dispose(),
+    );
+  }
+}
+
+class _GarapinTagState extends State<GarapinTag> {
+  @override
+  /*Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Test App",
+      home: MyHomePage(garapinController: widget.controller),
+    );
+  }*/
+
+  StreamController<String> stringController = StreamController<String>();
+
+  StreamController<List<String>> listController =
+      StreamController<List<String>>();
+
+  Widget build(BuildContext context) {
+    Stream isiData = stringController.stream;
+    Stream isiListData = listController.stream;
+
+    String isiString = "test";
+
+    List<String> isiListString = ["test1", "test2"];
+
+    List<GarapinTagModel> _listData = List<GarapinTagModel>();
+    _listData.add(GarapinTagModel(title: "nama1"));
+    _listData.add(GarapinTagModel(title: "nama2"));
+
+    //widget.controller.tagController.add(_listData);
+
+    listController.add(isiListString);
+
+    return MaterialApp(
+      home: Column(
+        children: [
+          StreamBuilder(
+            stream: isiListData,
+            //initialData: "data0",
+            builder: (context, isi) {
+              if (isi.hasData) {
+                List<String> data = isi.data;
+
+                data.forEach((element) {
+                  print(element);
+                });
+              }
+              return Container();
+            },
+          ),
+          Container(
+            color: Colors.white,
+            child: FlatButton(
+              child: Directionality(
+                textDirection: TextDirection.ltr,
+                child: Text("Press"),
+              ),
+              onPressed: () {
+                //stringController.add(isiString);
+                isiListString.add("test3");
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/*class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key key, this.garapinController}) : super(key: key);
+  final GarapinTagController garapinController;
+
+  @override
+  Widget build(BuildContext context) {
+    List<GarapinTagModel> _listData = List<GarapinTagModel>();
+    _listData.add(GarapinTagModel(title: "nama1"));
+    _listData.add(GarapinTagModel(title: "nama2"));
+
+    /*Stream<List<GarapinTagModel>> _streamTag =
+        Stream<List<GarapinTagModel>>.value(_listData);*/
+
+    garapinController.tagController.add(_listData);
+
+    //return Container();
+
+    return Container(
+        color: Colors.white,
+        child: Center(
+            child: GarapInTag(
+          text: "Sablon Baju",
+          labeltext: "Masukan bagian yang bisa di Custom",
+          width: MediaQuery.of(context).size.width * 0.8,
+          initTag: true,
+          streamData: garapinController.tagStream,
+          onClose: () {
+            print("deleted");
+          },
+        )));
+  }
+}*/

@@ -1,0 +1,58 @@
+import 'dart:async';
+
+import 'package:customtag/garapinTag.dart';
+import 'package:customtag/garapinTagController.dart';
+import 'package:customtag/modal/garapinTagModel.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(GarapinTag());
+}
+
+class GarapinTag extends StatefulWidget {
+  @override
+  _GarapinTagState createState() => _GarapinTagState();
+}
+
+class _GarapinTagState extends State<GarapinTag> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Test App",
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key key, this.garapinController}) : super(key: key);
+  final GarapinTagController garapinController;
+
+  @override
+  Widget build(BuildContext context) {
+    List<GarapinTagModel> _listData = List<GarapinTagModel>();
+    _listData.add(GarapinTagModel(title: "nama1"));
+    _listData.add(GarapinTagModel(title: "nama2"));
+
+    /*Stream<List<GarapinTagModel>> _streamTag =
+        Stream<List<GarapinTagModel>>.value(_listData);*/
+
+    garapinController.tagController.add(_listData);
+
+    //return Container();
+
+    return Container(
+        color: Colors.white,
+        child: Center(
+            child: GarapInTag(
+          text: "Sablon Baju",
+          labeltext: "Masukan bagian yang bisa di Custom",
+          width: MediaQuery.of(context).size.width * 0.8,
+          initTag: true,
+          streamData: garapinController.tagStream,
+          onClose: () {
+            print("deleted");
+          },
+        )));
+  }
+}

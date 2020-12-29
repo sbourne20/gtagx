@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+
+class GarapInTag extends Container {
+  GarapInTag({@required String text, bool xxx = true})
+      : super(
+          child: !xxx
+              ? null
+              : Container(
+                  padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                  height: 26,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          text,
+                          style: TextStyle(color: Colors.black),
+                          //textAlign: TextAlign.left,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          width: 25,
+                          child: MaterialButton(
+                            height: 22,
+                            onPressed: () {},
+                            color: Colors.blue,
+                            textColor: Colors.white,
+                            child: Icon(
+                              Icons.camera_alt,
+                              size: 15,
+                            ),
+                            padding: EdgeInsets.all(0),
+                            shape: CircleBorder(),
+                          ),
+                        ),
+                        Container(
+                          width: 25,
+                          child: MaterialButton(
+                            height: 22,
+                            onPressed: () {
+                              xxx = false;
+                              print("here");
+                            },
+                            color: Colors.grey,
+                            textColor: Colors.white,
+                            child: Icon(
+                              Icons.close,
+                              size: 15,
+                            ),
+                            padding: EdgeInsets.all(0),
+                            shape: CircleBorder(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+        );
+}

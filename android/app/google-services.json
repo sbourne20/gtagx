@@ -1,0 +1,123 @@
+{
+  "project_info": {
+    "project_number": "607837640605",
+    "firebase_url": "https://garapin-f35ef.firebaseio.com",
+    "project_id": "garapin-f35ef",
+    "storage_bucket": "garapin-f35ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607837640605:android:9b4679a542315e40460174",
+        "android_client_info": {
+          "package_name": "com.example.customtag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607837640605-7ijborg4i5r6fl78kbv8u3vhjkqreamr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8tvbtuRT_LP7CaVjMbBkAQ0sfzky00Pg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607837640605-7ijborg4i5r6fl78kbv8u3vhjkqreamr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "607837640605-hjffr22ub1gb2mi2run6i4s1bmhdg86o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.garapin.apps"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607837640605:android:5da2c6fc79770b24460174",
+        "android_client_info": {
+          "package_name": "com.garapin.apps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607837640605-7aug1iknt2nkl946l52nn0gnl955v1dp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.garapin.apps",
+            "certificate_hash": "e8b36003bc7c285f144b2502117e6a35b059c6a8"
+          }
+        },
+        {
+          "client_id": "607837640605-h8dek51cuklkb9ui0vuvs5manngr27fd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.garapin.apps",
+            "certificate_hash": "b2c21b53a5236279c01e21c2086cef5a72026c2a"
+          }
+        },
+        {
+          "client_id": "607837640605-jhkqhqh7n8kt7gr26s1v5fuhhvg6itb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.garapin.apps",
+            "certificate_hash": "ec437f580ac6eb559276e8d123b120591a382b53"
+          }
+        },
+        {
+          "client_id": "607837640605-mpepovo3t0vhpfafosjglqp71bqeudjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.garapin.apps",
+            "certificate_hash": "89e4ca7b3bf3cb68b85ed5d04c19bb4d3cfee297"
+          }
+        },
+        {
+          "client_id": "607837640605-oakga6acdinkr3flp7erqpt69bthbe4c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.garapin.apps",
+            "certificate_hash": "19ce34485d0cba797e434aa115621a28ef1408b2"
+          }
+        },
+        {
+          "client_id": "607837640605-7ijborg4i5r6fl78kbv8u3vhjkqreamr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8tvbtuRT_LP7CaVjMbBkAQ0sfzky00Pg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607837640605-7ijborg4i5r6fl78kbv8u3vhjkqreamr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "607837640605-hjffr22ub1gb2mi2run6i4s1bmhdg86o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.garapin.apps"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
